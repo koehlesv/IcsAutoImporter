@@ -355,12 +355,19 @@ begin
       SaveData(LData, TempFilePath, StartSequenz, EndSequenz);
       {$IFNDEF NOOPENOFCREATEDICS}
       if AWaitOnFinishIcsImport then
-        ExecuteEx(TempFilePath, '')
+      begin
+        ExecuteEx(TempFilePath, '');
+        DeleteFile(TempFilePath);
+      end
       else
+      begin
         ShellExecute(0, PChar('open'), PChar(TempFilePath), nil, nil, SW_HIDE);
+      {$ELSE}
+      begin
       {$ENDIF}
-      if not MoveFileEx(PChar(TempFilePath), nil, MOVEFILE_DELAY_UNTIL_REBOOT) then //Erfordert Administrator-Berechtigungen, die man dem Programm vielleicht gar nicht geben möchte.
-        WriteMaintenanceFile(TempFilePath);
+        if not MoveFileEx(PChar(TempFilePath), nil, MOVEFILE_DELAY_UNTIL_REBOOT) then //Erfordert Administrator-Berechtigungen, die man dem Programm vielleicht gar nicht geben möchte.
+          WriteMaintenanceFile(TempFilePath);
+      end;
       SaveAlreadyImportedICSData(LData, APathToAlreadyImportedFiles, AKeepOldValues);
     end;
   finally

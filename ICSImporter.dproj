@@ -129,6 +129,10 @@
         <DCCReference Include="Importer.pas"/>
         <DCCReference Include="SaveFileHelper.pas"/>
         <DCCReference Include="GlobalObjectHolder.pas"/>
+        <DCCReference Include="LizenzdialogFrm.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <None Include="Direktiven.inc"/>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>

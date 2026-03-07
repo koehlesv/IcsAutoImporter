@@ -7,7 +7,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls, Importer,
-  GlobalObjectHolder, System.Actions, Vcl.ActnList;
+  GlobalObjectHolder, System.Actions, Vcl.ActnList, LizenzdialogFrm;
 
 type
   TfrmMain = class(TForm)
@@ -198,6 +198,7 @@ end;
 
 procedure TfrmMain.FormCreate(Sender: TObject);
 begin
+  TfrmLizenzdialog.LizenzAkzeptierenAllInclusive();
   UpdateVisibility();
 end;
 

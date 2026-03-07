@@ -11,7 +11,8 @@ uses
   MainFrm in 'MainFrm.pas' {frmMain},
   Importer in 'Importer.pas',
   SaveFileHelper in 'SaveFileHelper.pas',
-  GlobalObjectHolder in 'GlobalObjectHolder.pas';
+  GlobalObjectHolder in 'GlobalObjectHolder.pas',
+  LizenzdialogFrm in 'LizenzdialogFrm.pas' {frmLizenzdialog};
 
 const
   cParamExecuteDirect = '--ExecuteDirect';
@@ -25,6 +26,7 @@ const
   cParamPathToSubfolder = '--PathToSubfolder:';
   cParamDiscardOldValues = '--DiscardOldValues';
   cParamWaitForIcsImportTermination = '--WaitForIcsImportTermination';
+  cParamLizenzAkzeptiert = '--AcceptLicenseTerms';
 
 var
   ExecuteDirect: Boolean = False;
@@ -33,6 +35,7 @@ var
   AlwaysShowAlreadySet: Boolean = False;
   ParamModeAlreadySet: Boolean = False;
   WaitForIcsImportTermination: Boolean = False;
+  LizenzPerParameterAkzeptiert: Boolean = False;
   I: Integer;
   LoadType: TLoadType = ltFile;
   KfgFilePath: string = '';
@@ -109,6 +112,10 @@ begin
     else if StartsText(cParamWaitForIcsImportTermination, ParamStr(I)) then
     begin
       WaitForIcsImportTermination := True;
+    end
+    else if SameText(cParamLizenzAkzeptiert, ParamStr(I)) then
+    begin
+      LizenzPerParameterAkzeptiert := True;
     end;
   end;
 
@@ -118,6 +125,8 @@ begin
       GlobalObjectHolder.FilepathAlwaysOpenFile := TmpVal
     else
     begin
+      if not LizenzPerParameterAkzeptiert then
+        TfrmLizenzdialog.LizenzAkzeptierenAllInclusive();
       GlobalObjectHolder.AppIsInteractive := False;
       Importer := TImporter.Create;
       try

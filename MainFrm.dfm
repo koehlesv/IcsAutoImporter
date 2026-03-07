@@ -2,7 +2,7 @@ object frmMain: TfrmMain
   Left = 0
   Top = 0
   Caption = 'ICS-Datei automatisch importieren'
-  ClientHeight = 416
+  ClientHeight = 445
   ClientWidth = 592
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -277,12 +277,13 @@ object frmMain: TfrmMain
   end
   object pnlButttons: TPanel
     Left = 0
-    Top = 376
+    Top = 405
     Width = 592
     Height = 40
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 11
+    ExplicitTop = 376
     object btnDoImport: TButton
       AlignWithMargins = True
       Left = 10
