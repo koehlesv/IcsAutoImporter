@@ -283,7 +283,6 @@ object frmMain: TfrmMain
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 11
-    ExplicitTop = 376
     object btnDoImport: TButton
       AlignWithMargins = True
       Left = 10

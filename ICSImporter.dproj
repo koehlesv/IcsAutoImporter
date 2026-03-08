@@ -130,7 +130,7 @@
         <DCCReference Include="SaveFileHelper.pas"/>
         <DCCReference Include="GlobalObjectHolder.pas"/>
         <DCCReference Include="LizenzdialogFrm.pas">
-            <Form>Form1</Form>
+            <Form>frmLizenzdialog</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <None Include="Direktiven.inc"/>

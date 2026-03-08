@@ -86,7 +86,7 @@ implementation
 
 {$R *.dfm}
 
-uses Vcl.FileCtrl, System.IOUtils, LoadHomeDirectory, StrUtils,
+uses Vcl.FileCtrl, System.IOUtils, StrUtils,
   SaveFileHelper, System.UITypes;
 
 procedure TfrmMain.actShowHelpDlgExecute(Sender: TObject);
