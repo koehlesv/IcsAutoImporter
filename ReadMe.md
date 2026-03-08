@@ -28,7 +28,7 @@ Laden Sie die .exe-Datei herunter und führen Sie diese aus. Dies geht meistens 
 7. Wenn Sie Git als Versionierungssystem benutzen, müssen der Pfad zum Zielordner (zum Beispiel /Unterordner1/Ics-Ordner, beginnend mit einem Schrägstrich) sowie der Name des Repos zusätzlich hinterlegt werden.
 8. Klicken Sie auf das Feld "Importieren".
 9. Prüfen Sie das Ergebnis auf Korrektheit.
-10. Rochten Sie ggf. die automatische Ausführung der Datei ein (siehe unten).
+10. Richten Sie ggf. die automatische Ausführung der Datei ein (siehe unten).
 
 ## Häufig gestellte Fragen und ihre Antworten
 
